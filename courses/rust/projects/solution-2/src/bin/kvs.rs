@@ -1,5 +1,4 @@
 use clap::{App, AppSettings, Arg, SubCommand};
-use std::env;
 use std::io::Write;
 use std::process::exit;
 
