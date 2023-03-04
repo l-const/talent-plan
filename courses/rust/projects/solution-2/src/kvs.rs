@@ -1,10 +1,12 @@
-use std::collections::HashMap;
+use std::{collections::HashMap, path::PathBuf};
 
 /// A new in memory key-value store
 #[derive(Debug)]
 pub struct KvStore {
     map: HashMap<String, String>,
 }
+
+type Result<T> = std::result::Result<T, ()>;
 
 impl Default for KvStore {
     fn default() -> Self {
@@ -30,19 +32,20 @@ impl KvStore {
     /// store.set(String::from("key"), String::from("value"));
     /// assert!(store.get(String::from("key")).is_some());
     /// ```
-    pub fn set(&mut self, key: String, value: String) {
+    pub fn set(&mut self, key: String, value: String) -> Result<()> {
         self.map.insert(key, value);
+        Ok(())
     }
     /// Get a value from the KvStore by specifying the key
-    /// Returns the value or [`None`] if the key does not exist
+    /// Returns the Ok(value) or [`None`] if the key does not exist
     /// ```rust
     /// # use kvs::KvStore;
     /// let mut store = KvStore::new();
     /// let option = store.get(String::from("key"));
     /// assert!(option.is_none());
     /// ```
-    pub fn get(&mut self, key: String) -> Option<String> {
-        self.map.get(&key).map(|str_slice| str_slice.to_string())
+    pub fn get(&mut self, key: String) -> Result<Option<String>> {
+        Ok(self.map.get(&key).map(|str_slice| str_slice.to_string()))
     }
     /// Remove a value from the KvStore
     /// ```rust
@@ -52,7 +55,13 @@ impl KvStore {
     /// store.remove(String::from("key"));
     /// assert!(store.get(String::from("key")).is_none());
     /// ```
-    pub fn remove(&mut self, key: String) {
+    pub fn remove(&mut self, key: String) -> Result<()> {
         self.map.remove(&key);
+        Ok(())
+    }
+
+    /// TODO:
+    pub fn open(_path: impl Into<PathBuf>) -> Result<KvStore> {
+        Ok(KvStore::default())
     }
 }
