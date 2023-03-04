@@ -1,7 +1,7 @@
 use serde::ser::SerializeStructVariant;
 use serde::{Deserialize, Serialize};
 use serde::Serializer;
-// #[derive(Debug, Serialize, Deserialize)]
+
 #[derive(Debug, Deserialize)]
 pub(crate) enum Move {
     Left { steps: u8 },

@@ -1,13 +1,21 @@
 use serde::ser::SerializeStructVariant;
-use serde::{Deserialize, Serialize};
 use serde::Serializer;
-// #[derive(Debug, Serialize, Deserialize)]
-#[derive(Debug, Deserialize)]
+use serde::{Deserialize, Serialize};
+use serde_with::serde_as;
+
+#[derive(Debug, Deserialize, Clone, Copy)]
 pub(crate) enum Move {
     Left { steps: u8 },
     Right { steps: u8 },
     Up { steps: u8 },
     Down { steps: u8 },
+}
+
+#[serde_as]
+#[derive(Debug, Deserialize, Serialize)]
+pub(crate) struct MoveArray<const N: usize> {
+    #[serde_as(as = "[_; N]")]
+    pub(crate) array: [Move; N],
 }
 
 impl Serialize for Move {
@@ -41,4 +49,3 @@ impl Serialize for Move {
         state_variant.end()
     }
 }
-

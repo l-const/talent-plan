@@ -8,6 +8,8 @@
 
 use std::io::Write;
 
+// use serde::Serialize;
+
 mod data;
 fn main() {
     pub(crate) use crate::data::Move;
@@ -18,6 +20,7 @@ fn main() {
     writer.flush().unwrap();
     // Serialize move value to file
     serde_json::to_writer(writer, &a).unwrap();
+    // a.serialize(&mut serde_json::Serializer::new(&mut writer));
     // Deserialize move value from file
     let read_fd = std::fs::File::open("./out.json").unwrap();
     let reader = std::io::BufReader::new(read_fd);
