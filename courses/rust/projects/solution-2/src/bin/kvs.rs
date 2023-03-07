@@ -1,6 +1,5 @@
 use clap::{App, AppSettings, Arg, SubCommand};
-use std::io::Write;
-use std::process::exit;
+use kvs::{KvStore, Result};
 
 #[derive(Debug)]
 struct ParsedEnvVars {
@@ -10,7 +9,8 @@ struct ParsedEnvVars {
     description: &'static str,
 }
 
-fn main() {
+fn main() -> Result<()> {
+    let mut kvs = KvStore::open("./out")?;
     let env_vars: ParsedEnvVars = init_env_vars();
     let matches = App::new(env_vars.app_name)
         .author(env_vars.author)
@@ -39,31 +39,44 @@ fn main() {
 
     match matches.subcommand() {
         ("set", Some(arg_matches)) => {
-            let key = arg_matches.value_of("KEY");
-            let value = arg_matches.value_of("VALUE");
-            dbg!(key, value);
-            std::io::stderr()
-                .write_all("unimplemented".as_bytes())
-                .unwrap();
-            exit(1);
+            let key = arg_matches.value_of("KEY").unwrap();
+            let value = arg_matches.value_of("VALUE").unwrap();
+            let res = kvs.set(key.into(), value.into());
+            let res = handle_result(res);
+            res
         }
         ("get", Some(arg_matches)) => {
-            let key = arg_matches.value_of("KEY");
-            dbg!(key);
-            std::io::stderr()
-                .write_all("unimplemented".as_bytes())
-                .unwrap();
-            exit(1);
+            let key = arg_matches.value_of("KEY").unwrap();
+            let res = kvs.get(key.into());
+            let res = handle_result(res.map(|val| {
+                if let None = val {
+                    println!("Key not found")
+                }
+            }));
+            res
         }
         ("rm", Some(arg_matches)) => {
-            let key = arg_matches.value_of("KEY");
-            dbg!(key);
-            std::io::stderr()
-                .write_all("unimplemented".as_bytes())
-                .unwrap();
-            exit(1);
+            let key = arg_matches.value_of("KEY").unwrap();
+            let res = kvs.remove(key.into());
+            let res = handle_result(res);
+
+            if let Err(_) = res {
+                std::process::exit(1);
+            }
+            res
         }
         _ => unreachable!(),
+    }
+}
+
+fn handle_result(res: Result<()>) -> Result<()> {
+    if res.is_err() {
+        let error = res.unwrap_err();
+        let error_msg = &error.msg;
+        println!("{error_msg}");
+        Err(error)
+    } else {
+        res
     }
 }
 
@@ -72,7 +85,7 @@ fn init_env_vars() -> ParsedEnvVars {
     let app_name = env!("CARGO_BIN_NAME");
     let version = env!("CARGO_PKG_VERSION");
     let description = env!("CARGO_PKG_DESCRIPTION");
-    dbg!(author, app_name, version, description);
+    // dbg!(author, app_name, version, description);
     ParsedEnvVars {
         author,
         app_name,
