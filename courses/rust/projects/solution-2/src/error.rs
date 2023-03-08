@@ -20,3 +20,6 @@ impl From<serde_json::Error> for KvsError<String> {
         }
     }
 }
+
+/// Crate level result type
+pub type Result<T> = std::result::Result<T, KvsError<String>>;

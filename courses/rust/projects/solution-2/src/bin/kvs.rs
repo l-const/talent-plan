@@ -10,7 +10,8 @@ struct ParsedEnvVars {
 }
 
 fn main() -> Result<()> {
-    let mut kvs = KvStore::open("./out")?;
+    let cwd = std::env::current_dir().unwrap();
+    let mut kvs = KvStore::open(cwd)?;
     let env_vars: ParsedEnvVars = init_env_vars();
     let matches = App::new(env_vars.app_name)
         .author(env_vars.author)
@@ -41,6 +42,7 @@ fn main() -> Result<()> {
         ("set", Some(arg_matches)) => {
             let key = arg_matches.value_of("KEY").unwrap();
             let value = arg_matches.value_of("VALUE").unwrap();
+            dbg!(&key, &value);
             let res = kvs.set(key.into(), value.into());
             let res = handle_result(res);
             res
@@ -48,6 +50,7 @@ fn main() -> Result<()> {
         ("get", Some(arg_matches)) => {
             let key = arg_matches.value_of("KEY").unwrap();
             let res = kvs.get(key.into());
+            dbg!(&key);
             let res = handle_result(res.map(|val| {
                 if let None = val {
                     println!("Key not found")

@@ -3,4 +3,5 @@
 mod error;
 mod kvs;
 mod ser;
+pub use crate::error::Result;
 pub use crate::kvs::*;

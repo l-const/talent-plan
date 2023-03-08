@@ -16,8 +16,10 @@
 //! many cases, the operating system’s filesystem read-ahead cache makes this a much faster operation than would
 //! be otherwise expected
 
-use crate::{error::KvsError, ser::KvsCommand};
-use std::io::{BufWriter, Write, BufReader, Read, Seek};
+use serde_json::Deserializer;
+
+use crate::{error::KvsError, error::Result, ser::KvsCommand};
+use std::io::{BufReader, BufWriter, Write, Read};
 use std::{collections::HashMap, fs::File, path::PathBuf};
 
 /// A new in memory key-value store
@@ -30,9 +32,6 @@ pub struct KvStore {
     writer: BufWriter<File>,
     reader: BufReader<File>,
 }
-
-/// Crate level result type
-pub type Result<T> = std::result::Result<T, KvsError<String>>;
 
 const KEY_NOT_FOUND: &'static str = "Key not found";
 
@@ -63,6 +62,19 @@ impl KvStore {
             Ok(())
         }
     }
+
+    /// Constructor for KvStore
+    pub fn new(read: BufReader<File>, write: BufWriter<File>) -> Self {
+        let mut store  = Self {
+            map: HashMap::new(),
+            writer: write,
+            reader: read,
+        };
+        store.build_index();
+        store
+    } 
+
+
     /// Get a value from the KvStore by specifying the key
     /// Returns the Ok(value) or [`None`] if the key does not exist
     /// ```rust
@@ -72,7 +84,7 @@ impl KvStore {
     /// assert!(result.is_ok());
     /// ```
     pub fn get(&mut self, key: String) -> Result<Option<String>> {
-        self.build_index();
+        // self.build_index();
         match self.map.get(&key) {
             Some(value) => Ok(Some(value.to_string())),
             None => Ok(None),
@@ -87,7 +99,7 @@ impl KvStore {
     /// assert!(store.get(String::from("key")).is_ok());
     /// ```
     pub fn remove(&mut self, key: String) -> Result<()> {
-        self.build_index();
+        // self.build_index();
         //TODO: maybe check when writing the rm cmd.
         if self.map.is_empty() {
             return Err(key_not_found());
@@ -108,11 +120,7 @@ impl KvStore {
         path_buf.push(".log");
         let reader = BufReader::new(File::open(path_buf)?);
         let writer = std::io::BufWriter::new(log_file_handle);
-        Ok(Self {
-            map: HashMap::new(),
-            writer,
-            reader,
-        })
+        Ok(Self::new(reader, writer))
     }
 
     pub(crate) fn create_file(mut log_path: PathBuf) -> Result<File> {
@@ -135,11 +143,13 @@ impl KvStore {
         Ok(())
     }
 
-
     pub(crate) fn read_log(&mut self) -> Result<Vec<KvsCommand>> {
-        let cmds: Vec<KvsCommand> = serde_json::from_reader(&mut self.reader)?;
-        // self.reader.stream_position();
-        Ok(cmds)
+        let mut cmds = Deserializer::from_reader(&mut self.reader).into_iter::<KvsCommand>();
+        let mut return_cmds = vec![];
+        while let Some(Ok(cmd)) = cmds.next() {
+            return_cmds.push(cmd);
+        }
+        Ok(return_cmds)
     }
 
     pub(crate) fn build_index(&mut self) {
@@ -150,12 +160,11 @@ impl KvStore {
                 let value = set_cmd.value;
                 self.map.insert(key, value);
             }
-       }
+        }
     }
 
     pub(crate) fn close(&mut self) -> Result<()> {
         self.writer.flush()?;
         Ok(())
     }
-
 }
