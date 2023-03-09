@@ -1,3 +1,4 @@
+use chrono::Utc;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -15,4 +16,13 @@ pub(crate) struct Set {
 #[derive(Debug, Serialize, Deserialize)]
 pub(crate) struct Rm {
     pub(crate) key: String,
+}
+
+
+#[derive(Debug, Serialize, Deserialize)]
+pub(crate) struct LogPointer {
+    file_id: u8,
+    value_size: u32,
+    value_pos: u32,
+    timestamp: chrono::DateTime<Utc>,
 }
