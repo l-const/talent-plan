@@ -1,0 +1,97 @@
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:37110, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:34746, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:57612, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:58536, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:58422, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:35974, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:42128, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:33490, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:56780, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:54750, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:35870, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:54148, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - bytes read: [0, 0, 0, 0, 0, 0, 0]
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:52982, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - bytes read: [0, 0, 0, 0, 0, 0, 0]
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:47550, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - bytes read: [0, 0, 0, 0, 0, 0, 0]
+INFO - bytes read: [0, 0, 0, 0, 0, 0, 0]
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:41830, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - bytes read: [0, 0, 0, 0, 0]
+INFO - bytes read: [0, 0, 0, 0, 0]
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:52536, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - bytes read: [0, 0, 0, 0, 0]
+WARN - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+WARN - 5
+INFO - bytes read: [43, 80, 79, 78, 71]
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:40940, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - bytes read: [0, 0, 0, 0, 0]
+WARN - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+INFO - bytes read: [0, 0, 0, 0, 0]
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:40952, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - bytes read: [0, 0, 0, 0, 0]
+WARN - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+INFO - bytes read: [0, 0, 0, 0, 0]
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:35234, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - bytes read: [0, 0, 0, 0, 0]
+WARN - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+INFO - bytes read: [0, 0, 0, 0, 0]
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:41312, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - bytes read: [0, 0, 0, 0, 0]
+WARN - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+INFO - bytes read: [0, 0, 0, 0, 0]
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:59172, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - bytes read: [0, 0, 0, 0, 0, 0, 0]
+WARN - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+INFO - bytes read: [0, 0, 0, 0, 0, 0, 0]
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:54896, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - bytes read: [0, 0, 0, 0, 0, 0]
+WARN - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+INFO - bytes read: [0, 0, 0, 0, 0, 0]
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:38798, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - bytes read: [0, 0, 0, 0, 0, 0]
+WARN - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+INFO - bytes read: [0, 0, 0, 0, 0, 0]
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:35070, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - bytes read: [0, 0, 0, 0, 0, 0]
+WARN - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+INFO - bytes read: [0, 0, 0, 0, 0, 0]
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:34508, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - bytes read: [0, 0, 0, 0, 0, 0]
+WARN - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+INFO - bytes read: [0, 0, 0, 0, 0, 0]
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:34510, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - bytes read: [0, 0, 0, 0, 0, 0]
+WARN - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+INFO - bytes read: [0, 0, 0, 0, 0, 0]
+INFO - Hello from the redis client!
+INFO - client was initialised: Client { client: TcpStream { addr: 127.0.0.1:34526, peer: 127.0.0.1:6379, fd: 4 } }
+INFO - bytes read: [0, 0, 0, 0, 0, 0]
+WARN - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+INFO - bytes read: [0, 0, 0, 0, 0, 0]
