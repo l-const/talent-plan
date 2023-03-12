@@ -18,180 +18,272 @@
 
 use serde_json::Deserializer;
 
-use crate::{error::KvsError, error::Result, ser::KvsCommand};
-use crate::{ser::LogPointer};
-use std::fmt::format;
-use std::io::{BufReader, BufWriter, Write, Read};
+// use crate::domain::LogPointer;
+use crate::{
+    domain::{BufReaderWithPos, BufWriterWithPos, KvsCommand, LogPointer},
+    error::Result,
+};
+use std::io::{Seek, SeekFrom, Write};
+use std::{collections::BTreeMap, fs, io::Read};
 use std::{collections::HashMap, fs::File, path::PathBuf};
 
+// Threshold in bytes which needs to be exceeded in order to do a compaction operation.
+static COMPACTION_THRESHOLD: u64 = 1024 * 1024;
+static LOG_FILETYPE_SUFFIX: &'static str = ".log";
+static KEY_NOT_FOUND: &'static str = "Key not found";
+
 /// A new in memory key-value store
+/// Key/value pairs are persisted to disk in log files. Log files are named after
+/// monotonically increasing generation numbers with a `log` extension name.
+/// A `BTreeMap` in memory stores the keys and the value locations for fast query.
 #[derive(Debug)]
 pub struct KvStore {
     /// A keydir is simply a hash
     /// table that maps every key in a Bitcask to a fixed-size structure giving the file, offset, and size of the most recently
     /// written entry for that key
-    map: HashMap<String, String>,
-    writer: BufWriter<File>,
-    readers: HashMap<std::path::PathBuf, BufReader<File>>,
-    file_count: u8
+
+    /// Directory for the log and other data
+    path: PathBuf,
+
+    index: BTreeMap<String, LogPointer>,
+    // writer of the current log.
+    writer: BufWriterWithPos<File>,
+    // map generation number to the file reader.
+    readers: HashMap<u64, BufReaderWithPos<File>>,
+    current_file_idx: u64,
+    // the number of bytes representing "stale" commands that could be
+    // deleted during a compaction.
+    uncompacted: u64,
 }
 
-// Threshold in bytes which needs to be exceeded in order to do a compaction operation.
-static COMPACTION_THRESHOLD: usize = 8192;
-
-const KEY_NOT_FOUND: &'static str = "Key not found";
-
-fn key_not_found() -> KvsError<String> {
-    KvsError {
-        msg: KEY_NOT_FOUND.into(),
-    }
-}
-
-impl  KvStore {
+impl KvStore {
     /// Set a new entry to the KvStore
     /// ```rust
     /// # use kvs::KvStore;
-    /// let mut store = KvStore::new();
+    /// let mut store = KvStore::open("./").unwrap();
     /// store.set(String::from("key"), String::from("value"));
     /// assert!(store.get(String::from("key")).is_ok());
     /// ```
     pub fn set(&mut self, key: String, value: String) -> Result<()> {
-        let set_cmd = KvsCommand::Set(crate::ser::Set {
+        let set_cmd = KvsCommand::Set(crate::domain::Set {
             key: key.clone(),
             value: value.clone(),
         });
-        if let Some(_) = self.map.insert(key, value) {
-            self.write_log(set_cmd)?;
-            Ok(())
-        } else {
-            self.write_log(set_cmd)?;
-            Ok(())
+        let pos = self.writer.pos;
+        serde_json::to_writer(&mut self.writer, &set_cmd)?;
+        self.writer.flush()?;
+        if let Some(old_cmd) = self
+            .index
+            .insert(key, (self.current_file_idx, (pos..self.writer.pos)).into())
+        {
+            self.uncompacted += old_cmd.value_size;
         }
+
+        if self.uncompacted > COMPACTION_THRESHOLD {
+            self.compact()?;
+        }
+
+        Ok(())
     }
-
-    /// Constructor for KvStore
-    pub fn new(read: (BufReader<File>, &std::path::Path), write: BufWriter<File>) -> Self {
-        let mut readers = HashMap::new();
-        readers.insert(read.1.to_path_buf(), read.0);
-        let mut store  = Self {
-            map: HashMap::new(),
-            writer: write,
-            readers,
-            file_count: Default::default()
-        };
-        store.build_index();
-        store
-    } 
-
 
     /// Get a value from the KvStore by specifying the key
     /// Returns the Ok(value) or [`None`] if the key does not exist
     /// ```rust
     /// # use kvs::KvStore;
-    /// let mut store = KvStore::new();
+    /// let mut store = KvStore::open("./").unwrap();
     /// let result = store.get(String::from("key"));
     /// assert!(result.is_ok());
     /// ```
     pub fn get(&mut self, key: String) -> Result<Option<String>> {
-        // self.build_index();
-        match self.map.get(&key) {
-            Some(value) => Ok(Some(value.to_string())),
+        match self.index.get(&key) {
+            Some(log_pointer) => {
+                let reader = self
+                    .readers
+                    .get_mut(&log_pointer.file_id)
+                    .expect("Cannot find log reader");
+                reader.seek(SeekFrom::Start(log_pointer.value_pos))?;
+                let cmd_reader = reader.take(log_pointer.value_size);
+                if let KvsCommand::Set(crate::domain::Set { value, .. }) =
+                    serde_json::from_reader(cmd_reader)?
+                {
+                    return Ok(Some(value));
+                } else {
+                    return Err("Unexpected deserializes command".into());
+                }
+            }
             None => Ok(None),
         }
     }
     /// Remove a value from the KvStore
     /// ```rust
     /// # use kvs::KvStore;
-    /// let mut store = KvStore::new();
+    /// let mut store = KvStore::open("./").unwrap();
     /// store.set(String::from("key"), String::from("value"));
     /// store.remove(String::from("key"));
     /// assert!(store.get(String::from("key")).is_ok());
     /// ```
     pub fn remove(&mut self, key: String) -> Result<()> {
-        // self.build_index();
-        //TODO: maybe check when writing the rm cmd.
-        if self.map.is_empty() {
-            return Err(key_not_found());
-        }
-        if let Some(_) = self.map.remove(&key) {
-            let rm_cmd = KvsCommand::Rm(crate::ser::Rm { key: key.clone() });
-            self.write_log(rm_cmd)?;
+        if self.index.contains_key(&key) {
+            dbg!("inside");
+            let rm_cmd = KvsCommand::Rm(crate::domain::Rm { key: key.clone() });
+            serde_json::to_writer(&mut self.writer, &rm_cmd)?;
+            self.writer.flush()?;
+            let old_cmd = self.index.remove(&key).expect(KEY_NOT_FOUND);
+            self.uncompacted += old_cmd.value_size;
             Ok(())
         } else {
-            Err(key_not_found())
+            Err(KEY_NOT_FOUND.into())
         }
     }
-
-    /// TODO:
+    /// Opens a `KvStore` with the given path.
+    ///
+    /// This will create a new directory if the given one does not exist.
+    ///
+    /// # Errors
+    ///
+    /// It propagates I/O or deserialization errors during the log replay.
     pub fn open(path: impl Into<PathBuf>) -> Result<KvStore> {
-        let mut path_buf: PathBuf = path.into();
-        let log_file_handle = Self::create_file(path_buf.clone())?;
-        path_buf.push(".log");
-        let reader = BufReader::new(File::open(&path_buf)?);
-        let writer = std::io::BufWriter::new(log_file_handle);
-        Ok(Self::new((reader, path_buf.as_path()), writer))
-    }
+        let path_buf: PathBuf = path.into();
+        fs::create_dir_all(&path_buf)?;
 
+        let mut readers = HashMap::new();
+        let mut index = BTreeMap::new();
 
-    pub(crate) fn scan_folder(&self, path: impl Into<PathBuf>) -> () {
-        todo!()
-    }
+        let file_idx_list = sorted_file_idx_list(&path_buf)?;
+        let mut uncompacted = 0;
 
-
-    pub(crate) fn compaction(&self) -> () {
-        todo!()
-    }
-
-    pub(crate) fn create_file(mut log_path: PathBuf) -> Result<File> {
-        if !std::path::Path::exists(&log_path) {
-            std::fs::create_dir(&log_path)?;
+        for &file_idx in &file_idx_list {
+            let mut reader = BufReaderWithPos::new(File::open(create_path(&path_buf, file_idx))?)?;
+            uncompacted += build_index_from_reader(file_idx, &mut reader, &mut index)?;
+            readers.insert(file_idx, reader);
         }
-        log_path.push(".log");
-        let log_file_handle = File::options()
-            .create(true)
-            .read(true)
-            .append(true)
-            .open(log_path)?;
-        Ok(log_file_handle)
+
+        let current_file_idx = file_idx_list.last().unwrap_or(&0) + 1;
+        let writer = create_file(&path_buf, current_file_idx, &mut readers)?;
+
+        Ok(KvStore {
+            path: path_buf,
+            readers,
+            index,
+            current_file_idx,
+            writer,
+            uncompacted,
+        })
     }
 
-    pub(crate) fn write_log(&mut self, cmd: KvsCommand) -> Result<()> {
-        let str = serde_json::to_string(&cmd)?;
-        self.writer.write_all(str.as_bytes())?;
-        self.writer.flush()?;
-        Ok(())
-    }
+    /// Clears stale entries in the log.
+    pub(crate) fn compact(&mut self) -> crate::Result<()> {
+        // increase current gen by 2. current_gen + 1 is for the compaction file.
+        let cur_file_idx = self.current_file_idx + 1;
+        self.current_file_idx += 2;
+        self.writer = self.create_file(self.current_file_idx)?;
+        let mut compaction_writer = self.create_file(cur_file_idx)?;
 
-    pub(crate) fn read_log(&mut self) -> Result<Vec<KvsCommand>> {
-        let current_reader = self.readers.get_mut(&crate::kvs::create_path("", self.file_count)).unwrap();
-        let mut cmds = Deserializer::from_reader(current_reader).into_iter::<KvsCommand>();
-        let mut return_cmds = vec![];
-        while let Some(Ok(cmd)) = cmds.next() {
-            return_cmds.push(cmd);
-        }
-        Ok(return_cmds)
-    }
-
-    pub(crate) fn build_index(&mut self) {
-        let cmds = self.read_log().expect("Failed to read log from");
-        for cmd in cmds.into_iter() {
-            if let KvsCommand::Set(set_cmd) = cmd {
-                let key = set_cmd.key;
-                let value = set_cmd.value;
-                self.map.insert(key, value);
+        let mut new_pos = 0; // pos in the new log file.
+        for log_pointer in &mut self.index.values_mut() {
+            let reader = self
+                .readers
+                .get_mut(&log_pointer.file_id)
+                .expect("Cannot find log reader");
+            if reader.pos != log_pointer.value_pos {
+                reader.seek(SeekFrom::Start(log_pointer.value_pos))?;
             }
+
+            let mut entry_reader = reader.take(log_pointer.value_size);
+            let len = std::io::copy(&mut entry_reader, &mut compaction_writer)?;
+            *log_pointer = (cur_file_idx, new_pos..new_pos + len).into();
+            new_pos += len;
         }
+        compaction_writer.flush()?;
+
+        // remove stale log files.
+        let stale_gens: Vec<_> = self
+            .readers
+            .keys()
+            .filter(|&&f_idx| f_idx < cur_file_idx)
+            .cloned()
+            .collect();
+        for stale_gen in stale_gens {
+            self.readers.remove(&stale_gen);
+            fs::remove_file(create_path(&self.path, stale_gen))?;
+        }
+        self.uncompacted = 0;
+
+        Ok(())
     }
 
-    pub(crate) fn close(&mut self) -> Result<()> {
-        self.writer.flush()?;
-        Ok(())
+    /// Create a new log file with given generation number and add the reader to the readers map.
+    ///
+    /// Returns the writer to the log.
+    pub(crate) fn create_file(&mut self, file_idx: u64) -> crate::Result<BufWriterWithPos<File>> {
+        create_file(&self.path, file_idx, &mut self.readers)
     }
 }
 
-fn create_path(prefix: &str, suffix: u8) -> PathBuf {
-    let mut path_buf =  PathBuf::new();
-    path_buf.push(prefix);
-    path_buf.push(&format!("{}", suffix));
-    path_buf
+fn create_path(dir: &std::path::Path, suffix: u64) -> PathBuf {
+    dir.join(format!("{}{}", suffix, LOG_FILETYPE_SUFFIX))
+}
+
+fn create_file(
+    path: &std::path::Path,
+    file_idx: u64,
+    readers: &mut HashMap<u64, BufReaderWithPos<File>>,
+) -> crate::Result<BufWriterWithPos<File>> {
+    let path = create_path(&path, file_idx);
+    let writer = BufWriterWithPos::new(
+        File::options()
+            .create(true)
+            .read(true)
+            .append(true)
+            .open(&path)?,
+    )?;
+    readers.insert(file_idx, BufReaderWithPos::new(File::open(&path)?)?);
+    Ok(writer)
+}
+
+fn sorted_file_idx_list(path: &std::path::Path) -> crate::Result<Vec<u64>> {
+    let mut file_list: Vec<u64> = fs::read_dir(&path)?
+        .flat_map(|res| -> Result<_> { Ok(res?.path()) })
+        .filter(|path| path.is_file() && path.extension() == Some("log".as_ref()))
+        .flat_map(|path| {
+            path.file_name()
+                .and_then(std::ffi::OsStr::to_str)
+                .map(|s| s.trim_end_matches(LOG_FILETYPE_SUFFIX))
+                .map(str::parse::<u64>)
+        })
+        .flatten()
+        .collect();
+    file_list.sort_unstable();
+    Ok(file_list)
+}
+
+fn build_index_from_reader(
+    idx: u64,
+    reader: &mut BufReaderWithPos<File>,
+    index: &mut BTreeMap<String, LogPointer>,
+) -> crate::Result<u64> {
+    // Make sure we read from the beginning of the file
+    let mut pos = reader.seek(SeekFrom::Start(0))?;
+    let mut stream_cmds = Deserializer::from_reader(reader).into_iter::<KvsCommand>();
+    let mut uncompacted = 0; // number of bytes that can be saved after a compaction.
+    while let Some(Ok(cmd)) = stream_cmds.next() {
+        let new_pos = stream_cmds.byte_offset() as u64;
+        match cmd {
+            KvsCommand::Set(crate::domain::Set { key, .. }) => {
+                if let Some(old_cmd) = index.insert(key, (idx, (pos..new_pos)).into()) {
+                    uncompacted += old_cmd.value_size;
+                }
+            }
+            KvsCommand::Rm(crate::domain::Rm { key }) => {
+                if let Some(old_cmd) = index.remove(&key) {
+                    uncompacted += old_cmd.value_size;
+                }
+                // the "remove" command itself can be deleted in the next compaction.
+                // so we add its length to `uncompacted`.
+                uncompacted += new_pos - pos;
+            }
+        }
+        pos = new_pos;
+    }
+    Ok(uncompacted)
 }

@@ -11,7 +11,6 @@ struct ParsedEnvVars {
 
 fn main() -> Result<()> {
     let cwd = std::env::current_dir().unwrap();
-    let mut kvs = KvStore::open(cwd)?;
     let env_vars: ParsedEnvVars = init_env_vars();
     let matches = App::new(env_vars.app_name)
         .author(env_vars.author)
@@ -42,24 +41,27 @@ fn main() -> Result<()> {
         ("set", Some(arg_matches)) => {
             let key = arg_matches.value_of("KEY").unwrap();
             let value = arg_matches.value_of("VALUE").unwrap();
-            dbg!(&key, &value);
+            let mut kvs = KvStore::open(cwd)?;
             let res = kvs.set(key.into(), value.into());
             let res = handle_result(res);
             res
         }
         ("get", Some(arg_matches)) => {
             let key = arg_matches.value_of("KEY").unwrap();
+            let mut kvs = KvStore::open(cwd)?;
             let res = kvs.get(key.into());
-            dbg!(&key);
             let res = handle_result(res.map(|val| {
-                if let None = val {
+                if let None = &val {
                     println!("Key not found")
+                } else {
+                    println!("{}", val.unwrap())
                 }
             }));
             res
         }
         ("rm", Some(arg_matches)) => {
             let key = arg_matches.value_of("KEY").unwrap();
+            let mut kvs = KvStore::open(cwd)?;
             let res = kvs.remove(key.into());
             let res = handle_result(res);
 
@@ -88,7 +90,6 @@ fn init_env_vars() -> ParsedEnvVars {
     let app_name = env!("CARGO_BIN_NAME");
     let version = env!("CARGO_PKG_VERSION");
     let description = env!("CARGO_PKG_DESCRIPTION");
-    // dbg!(author, app_name, version, description);
     ParsedEnvVars {
         author,
         app_name,

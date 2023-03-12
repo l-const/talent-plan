@@ -363,6 +363,7 @@ dependencies = [
  "chrono",
  "clap",
  "failure",
+ "lazy_static",
  "predicates",
  "serde",
  "serde_json",

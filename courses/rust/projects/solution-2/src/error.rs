@@ -21,5 +21,11 @@ impl From<serde_json::Error> for KvsError<String> {
     }
 }
 
+impl From<&str> for KvsError<String> {
+    fn from(input: &str) -> Self {
+        KvsError { msg: input.into() }
+    }
+}
+
 /// Crate level result type
 pub type Result<T> = std::result::Result<T, KvsError<String>>;
