@@ -1,5 +1,5 @@
-use std::{fs, io::{Write, Read}};
-use log::{info,warn, LevelFilter};
+use std::{fs, io::{Write, Read}, str::from_utf8};
+use log::{info, trace, LevelFilter};
 use log4rs::{
     append::{
         console::{ConsoleAppender, Target},
@@ -12,25 +12,16 @@ use log4rs::{
 
 use simple_redis::Client;
 
-fn main() {
-    println!("Hello, world!");
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     init_logger();
-    info!("Hello from the redis client!");
-    let mut client = Client::new("127.0.0.1:6379").expect("failed to initialize the client!");
-    info!("client was initialised: {:?}", &client);
-    client.write(b"PING\r\n");
-    client.flush().expect("failed to flush the client");
-    let mut buf =  [0 as u8; 6];
-    info!("bytes read: {:?}", &buf); 
-    loop {
-        
-    }
-    if let Err(e) = client.read_exact(&mut buf) {
-        warn!("Error reading {:?}", e);
-    }
-
-   
-    info!("bytes read: {:?}", &buf); 
+    let mut client = Client::new("127.0.0.1:6379").expect("Failed to initialize the client!");
+    trace!("client was initialised: {:?}", &client);
+    client.write(b"PING\r\n").expect("Failed to write.");
+    client.flush().expect("Failed to flush the client!");
+    let buf =  [0; 7];
+    let parsed_string  = client.send::<7>(buf)?;
+    info!("Parsed str: {}", &parsed_string);
+    Ok(())
 }
 
 
@@ -72,5 +63,4 @@ fn init_logger() {
     // once you are done.
     let _handle = log4rs::init_config(config).expect("failed to init config");
 
-    
 }
