@@ -100,3 +100,64 @@ TRACE - Parsed str: +PONG
 
 INFO - Parsed str: +PONG
 
+TRACE - client was initialised: Client { stream: TcpStream { addr: 127.0.0.1:47210, peer: 127.0.0.1:6379, fd: 4 } }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+INFO - Read bytes!
+TRACE - Parsed str: +PONG
+
+INFO - Parsed str: +PONG
+
+TRACE - client was initialised: Client { stream: TcpStream { addr: 127.0.0.1:59604, peer: 127.0.0.1:6379, fd: 4 } }
+TRACE - About to send PING
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+INFO - Read bytes!
+TRACE - Parsed str: +PONG
+
+INFO - Parsed str: +PONG
+
+TRACE - client was initialised: Client { stream: TcpStream { addr: 127.0.0.1:39020, peer: 127.0.0.1:6379, fd: 4 } }
+TRACE - About to send PING
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+TRACE - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+INFO - Read bytes!
+TRACE - Parsed str: +PONG
+
+INFO - Parsed str: +PONG
+

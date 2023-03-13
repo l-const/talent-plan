@@ -8,25 +8,21 @@ use log4rs::{
     encode::pattern::PatternEncoder,
     filter::threshold::ThresholdFilter,
 };
-use std::{fs, io::Write};
-
 use simple_redis::Client;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     init_logger();
     let mut client = Client::new("127.0.0.1:6379").expect("Failed to initialize the client!");
     trace!("client was initialised: {:?}", &client);
-    client.write(b"PING\r\n").expect("Failed to write.");
-    client.flush().expect("Failed to flush the client!");
     let buf = [0; 7];
-    let parsed_string = client.send::<7>(buf)?;
+    let parsed_string = client.send::<7>(b"PING", buf)?;
     info!("Parsed str: {}", &parsed_string);
     Ok(())
 }
 
 fn init_logger() {
     let level = log::LevelFilter::Info;
-    fs::create_dir_all("./tmp").expect("Failed to create tmp directory!");
+    std::fs::create_dir_all("./tmp").expect("Failed to create tmp directory!");
     let log_file_path = "./tmp/client.log";
 
     // Build a stdout logger
