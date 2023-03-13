@@ -1,4 +1,3 @@
-use std::{fs, io::{Write, Read}, str::from_utf8};
 use log::{info, trace, LevelFilter};
 use log4rs::{
     append::{
@@ -9,6 +8,7 @@ use log4rs::{
     encode::pattern::PatternEncoder,
     filter::threshold::ThresholdFilter,
 };
+use std::{fs, io::Write};
 
 use simple_redis::Client;
 
@@ -18,12 +18,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     trace!("client was initialised: {:?}", &client);
     client.write(b"PING\r\n").expect("Failed to write.");
     client.flush().expect("Failed to flush the client!");
-    let buf =  [0; 7];
-    let parsed_string  = client.send::<7>(buf)?;
+    let buf = [0; 7];
+    let parsed_string = client.send::<7>(buf)?;
     info!("Parsed str: {}", &parsed_string);
     Ok(())
 }
-
 
 fn init_logger() {
     let level = log::LevelFilter::Info;
@@ -62,5 +61,4 @@ fn init_logger() {
     // if you are trying to debug an issue and need more logs on then turn it off
     // once you are done.
     let _handle = log4rs::init_config(config).expect("failed to init config");
-
 }

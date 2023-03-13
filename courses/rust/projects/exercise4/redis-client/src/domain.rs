@@ -1,24 +1,20 @@
-use std::net::{TcpStream, ToSocketAddrs};
-use std::error::Error;
-use std::time::Duration;
-use std::io::Write;
-use std::io::Read;
 use log::{info, trace};
-
+use std::error::Error;
+use std::io::Read;
+use std::io::Write;
+use std::net::{TcpStream, ToSocketAddrs};
+use std::time::Duration;
 
 #[derive(Debug)]
 pub struct Client {
     stream: TcpStream,
 }
 
-
 impl Client {
     pub fn new<T: ToSocketAddrs>(to_socker_addrs: T) -> Result<Client, Box<dyn Error>> {
         let tcpstream = TcpStream::connect(to_socker_addrs)?;
         tcpstream.set_nonblocking(true)?;
-        let client = Self {
-            stream: tcpstream,
-        };
+        let client = Self { stream: tcpstream };
         client.set_read_timeout(Some(Duration::from_millis(200)))?;
         Ok(client)
     }
@@ -42,7 +38,6 @@ impl Client {
         Ok(parsed_str.to_string())
     }
 }
-
 
 impl Write for Client {
     fn write(&mut self, buf: &[u8]) -> std::io::Result<usize> {
