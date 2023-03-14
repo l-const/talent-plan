@@ -1,4 +1,4 @@
-use log::{info, trace, LevelFilter};
+use log::LevelFilter;
 use log4rs::{
     append::{
         console::{ConsoleAppender, Target},
@@ -8,30 +8,21 @@ use log4rs::{
     encode::pattern::PatternEncoder,
     filter::threshold::ThresholdFilter,
 };
-use simple_redis::Client;
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    init_logger();
-    let mut client = Client::new("127.0.0.1:6379").expect("Failed to initialize the client!");
-    trace!("client was initialised: {:?}", &client);
-    let buf = [0; 7];
-    let parsed_string = client.send::<7>(b"PING", buf)?;
-    info!("Parsed str: {}", &parsed_string);
-    Ok(())
-}
 
-fn init_logger() {
+pub fn init_logger(logfile_name: &str) {
     let level = log::LevelFilter::Info;
-    std::fs::create_dir_all("./tmp").expect("Failed to create tmp directory!");
-    let log_file_path = "./tmp/client.log";
-
+    let cur_dir  = std::env::current_dir().expect("failed to load current_dir");
+    let temp_dir =  cur_dir.join("tmp/");
+    std::fs::create_dir_all(&temp_dir).expect("Failed to create tmp directory!");
+    let log_file_path = temp_dir.join(format!("{}.log", logfile_name));
     // Build a stdout logger
     let stdout = ConsoleAppender::builder().target(Target::Stdout).build();
 
     // Logging to log file.
     let logfile = FileAppender::builder()
         // Pattern: https://docs.rs/log4rs/*/log4rs/encode/pattern/index.html
-        .encoder(Box::new(PatternEncoder::new("{l} - {m}\n")))
+        .encoder(Box::new(PatternEncoder::default()))
         .build(log_file_path)
         .unwrap();
 

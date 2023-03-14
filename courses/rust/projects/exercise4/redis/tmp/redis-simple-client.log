@@ -1,0 +1,38 @@
+2023-03-14T22:37:33.817980555+02:00 TRACE redis_simple_client - client was initialised: Client { stream: TcpStream { addr: 127.0.0.1:40378, peer: 127.0.0.1:6379, fd: 4 } }
+2023-03-14T22:37:33.818257526+02:00 TRACE simple_redis::domain - About to send: PING
+2023-03-14T22:37:33.818319529+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:37:33.818354876+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:37:33.818381506+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:37:33.818407021+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:37:33.818433496+02:00 INFO simple_redis::domain - Read bytes!
+2023-03-14T22:37:33.818474026+02:00 TRACE simple_redis::domain - Parsed str: +PONG
+
+2023-03-14T22:37:33.818495477+02:00 INFO redis_simple_client - Parsed str: +PONG
+
+2023-03-14T22:44:10.486305232+02:00 TRACE redis_simple_client - client was initialised: Client { stream: TcpStream { addr: 127.0.0.1:49308, peer: 127.0.0.1:6379, fd: 4 } }
+2023-03-14T22:44:10.486473928+02:00 TRACE simple_redis::domain - About to send: PING
+2023-03-14T22:44:10.486546997+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:44:10.486602178+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:44:10.486645094+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:44:10.486684613+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:44:10.486725902+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:44:10.486765373+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:44:10.486805485+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:44:10.486845627+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:44:10.486884385+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:44:10.486924089+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:44:10.486968328+02:00 INFO simple_redis::domain - Read bytes!
+2023-03-14T22:44:10.487049535+02:00 TRACE simple_redis::domain - Parsed str: +PONG
+
+2023-03-14T22:44:10.487085002+02:00 INFO redis_simple_client - Parsed str: +PONG
+
+2023-03-14T22:45:17.985793902+02:00 TRACE redis_simple_client - client was initialised: Client { stream: TcpStream { addr: 127.0.0.1:35870, peer: 127.0.0.1:6379, fd: 4 } }
+2023-03-14T22:45:17.985975069+02:00 TRACE simple_redis::domain - About to send: PING
+2023-03-14T22:45:17.986080983+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:45:17.986130988+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:45:17.986170142+02:00 TRACE simple_redis::domain - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-14T22:45:17.986199285+02:00 INFO simple_redis::domain - Read bytes!
+2023-03-14T22:45:17.986242057+02:00 TRACE simple_redis::domain - Parsed str: +PONG
+
+2023-03-14T22:45:17.986275145+02:00 INFO redis_simple_client - Parsed str: +PONG
+

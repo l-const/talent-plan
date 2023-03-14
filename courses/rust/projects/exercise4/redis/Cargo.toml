@@ -19,3 +19,7 @@ path = "src/lib.rs"
 [[bin]]
 name = "redis-simple-client"
 path = "src/bin/client.rs"
+
+[[bin]]
+name = "redis-simple-server"
+path = "src/bin/server.rs"
