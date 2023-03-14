@@ -25,7 +25,10 @@ fn handle_client(mut stream: TcpStream) -> Result<(), Box<dyn std::error::Error>
     let mut sleep_duration = std::time::Duration::from_nanos(10);
     loop {
         if let Err(e) = stream.read(&mut buf) {
-            trace!("Error reading {:?}", e);
+            // Reduce log messages
+            if n % 11 == 0 {
+                trace!("Error reading {:?}", e);
+            }
             if n > 100 {
                 break;
             }
@@ -39,7 +42,9 @@ fn handle_client(mut stream: TcpStream) -> Result<(), Box<dyn std::error::Error>
         // wait until network socket is ready, typically implemented
         // via platform-specific APIs such as epoll or IOCP
         n +=1;
-        trace!("About to sleep for {:?} ms.", sleep_duration);
+        if n % 11 == 0 {
+            trace!("About to sleep for {:?} ns", sleep_duration);
+        }
         std::thread::sleep(sleep_duration);
         sleep_duration = std::time::Duration::from_nanos(2 * n);
     }
