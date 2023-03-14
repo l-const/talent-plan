@@ -23,9 +23,15 @@ impl Client {
         self.stream.set_read_timeout(timeout)
     }
 
-    pub fn send<const M: usize>(&mut self, bytes: &[u8] ,mut buf: [u8; M]) -> Result<String, Box<dyn Error>> {
+    pub fn send<const M: usize>(
+        &mut self,
+        bytes: &[u8],
+        mut buf: [u8; M],
+    ) -> Result<String, Box<dyn Error>> {
         let crlf = [b'\r', b'\n'];
-        let bytes_trimmed = std::str::from_utf8(&bytes).unwrap().trim_end_matches(&['\r', '\n']);
+        let bytes_trimmed = std::str::from_utf8(&bytes)
+            .unwrap()
+            .trim_end_matches(&['\r', '\n']);
         trace!("About to send: {}", bytes_trimmed);
         let bytes_appended = [bytes_trimmed.as_bytes(), &crlf].concat();
         self.write(&bytes_appended).expect("Failed to write.");
@@ -34,6 +40,7 @@ impl Client {
             if let Err(e) = self.read(&mut buf) {
                 trace!("Error reading {:?}", e);
             }
+
             if let Ok(()) = self.read_exact(&mut buf) {
                 info!("Read bytes!");
                 break;

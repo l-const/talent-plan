@@ -9,11 +9,10 @@ use log4rs::{
     filter::threshold::ThresholdFilter,
 };
 
-
 pub fn init_logger(logfile_name: &str) {
     let level = log::LevelFilter::Info;
-    let cur_dir  = std::env::current_dir().expect("failed to load current_dir");
-    let temp_dir =  cur_dir.join("tmp/");
+    let cur_dir = std::env::current_dir().expect("Failed to load current_dir");
+    let temp_dir = cur_dir.join("tmp/");
     std::fs::create_dir_all(&temp_dir).expect("Failed to create tmp directory!");
     let log_file_path = temp_dir.join(format!("{}.log", logfile_name));
     // Build a stdout logger

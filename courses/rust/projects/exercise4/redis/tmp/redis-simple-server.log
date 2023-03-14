@@ -1,1 +1,410 @@
-2023-03-14T22:45:23.862300679+02:00 INFO redis_simple_server - Hello from server
+2023-03-15T01:22:30.444472955+02:00 INFO redis_simple_server - Hello from server
+2023-03-15T01:22:32.845964080+02:00 TRACE redis_simple_server - Recieved client connection from stream: TcpStream { addr: 127.0.0.1:6381, peer: 127.0.0.1:48256, fd: 5 }
+2023-03-15T01:22:32.846112053+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.846177576+02:00 TRACE redis_simple_server - About to sleep for 10ns ms.
+2023-03-15T01:22:32.846285751+02:00 TRACE redis_simple_server - About to sleep for 2ns ms.
+2023-03-15T01:22:32.846393525+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.846441325+02:00 TRACE redis_simple_server - About to sleep for 4ns ms.
+2023-03-15T01:22:32.846558508+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.846610079+02:00 TRACE redis_simple_server - About to sleep for 6ns ms.
+2023-03-15T01:22:32.846711434+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.846757310+02:00 TRACE redis_simple_server - About to sleep for 8ns ms.
+2023-03-15T01:22:32.846855629+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.846902741+02:00 TRACE redis_simple_server - About to sleep for 10ns ms.
+2023-03-15T01:22:32.847004697+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.847052526+02:00 TRACE redis_simple_server - About to sleep for 12ns ms.
+2023-03-15T01:22:32.847140443+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.847184533+02:00 TRACE redis_simple_server - About to sleep for 14ns ms.
+2023-03-15T01:22:32.847281903+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.847324209+02:00 TRACE redis_simple_server - About to sleep for 16ns ms.
+2023-03-15T01:22:32.847426341+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.847475371+02:00 TRACE redis_simple_server - About to sleep for 18ns ms.
+2023-03-15T01:22:32.847573422+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.847618287+02:00 TRACE redis_simple_server - About to sleep for 20ns ms.
+2023-03-15T01:22:32.847747976+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.847792925+02:00 TRACE redis_simple_server - About to sleep for 22ns ms.
+2023-03-15T01:22:32.847889633+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.847924864+02:00 TRACE redis_simple_server - About to sleep for 24ns ms.
+2023-03-15T01:22:32.848022603+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.848070597+02:00 TRACE redis_simple_server - About to sleep for 26ns ms.
+2023-03-15T01:22:32.848168444+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.848205763+02:00 TRACE redis_simple_server - About to sleep for 28ns ms.
+2023-03-15T01:22:32.848290647+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.848328891+02:00 TRACE redis_simple_server - About to sleep for 30ns ms.
+2023-03-15T01:22:32.848426289+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.848483015+02:00 TRACE redis_simple_server - About to sleep for 32ns ms.
+2023-03-15T01:22:32.848591181+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.848637097+02:00 TRACE redis_simple_server - About to sleep for 34ns ms.
+2023-03-15T01:22:32.848733407+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.848772803+02:00 TRACE redis_simple_server - About to sleep for 36ns ms.
+2023-03-15T01:22:32.848888714+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.848936997+02:00 TRACE redis_simple_server - About to sleep for 38ns ms.
+2023-03-15T01:22:32.849024849+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.849070315+02:00 TRACE redis_simple_server - About to sleep for 40ns ms.
+2023-03-15T01:22:32.849176569+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.849223231+02:00 TRACE redis_simple_server - About to sleep for 42ns ms.
+2023-03-15T01:22:32.849318334+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.849365187+02:00 TRACE redis_simple_server - About to sleep for 44ns ms.
+2023-03-15T01:22:32.849463088+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.849507984+02:00 TRACE redis_simple_server - About to sleep for 46ns ms.
+2023-03-15T01:22:32.849604961+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.849645676+02:00 TRACE redis_simple_server - About to sleep for 48ns ms.
+2023-03-15T01:22:32.849741192+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.849782332+02:00 TRACE redis_simple_server - About to sleep for 50ns ms.
+2023-03-15T01:22:32.849878978+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.849926536+02:00 TRACE redis_simple_server - About to sleep for 52ns ms.
+2023-03-15T01:22:32.850027163+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.850074186+02:00 TRACE redis_simple_server - About to sleep for 54ns ms.
+2023-03-15T01:22:32.850169846+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.850214719+02:00 TRACE redis_simple_server - About to sleep for 56ns ms.
+2023-03-15T01:22:32.850312335+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.850355681+02:00 TRACE redis_simple_server - About to sleep for 58ns ms.
+2023-03-15T01:22:32.850425277+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.850466308+02:00 TRACE redis_simple_server - About to sleep for 60ns ms.
+2023-03-15T01:22:32.850561652+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.850609728+02:00 TRACE redis_simple_server - About to sleep for 62ns ms.
+2023-03-15T01:22:32.850764550+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.850824269+02:00 TRACE redis_simple_server - About to sleep for 64ns ms.
+2023-03-15T01:22:32.850893639+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.850937230+02:00 TRACE redis_simple_server - About to sleep for 66ns ms.
+2023-03-15T01:22:32.851045988+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.851091424+02:00 TRACE redis_simple_server - About to sleep for 68ns ms.
+2023-03-15T01:22:32.851192805+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.851242525+02:00 TRACE redis_simple_server - About to sleep for 70ns ms.
+2023-03-15T01:22:32.851343114+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.851387859+02:00 TRACE redis_simple_server - About to sleep for 72ns ms.
+2023-03-15T01:22:32.851461993+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.851509073+02:00 TRACE redis_simple_server - About to sleep for 74ns ms.
+2023-03-15T01:22:32.851574121+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.851615995+02:00 TRACE redis_simple_server - About to sleep for 76ns ms.
+2023-03-15T01:22:32.851719021+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.851763189+02:00 TRACE redis_simple_server - About to sleep for 78ns ms.
+2023-03-15T01:22:32.851865033+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.851911083+02:00 TRACE redis_simple_server - About to sleep for 80ns ms.
+2023-03-15T01:22:32.852413921+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.852458119+02:00 TRACE redis_simple_server - About to sleep for 82ns ms.
+2023-03-15T01:22:32.852559232+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.852603320+02:00 TRACE redis_simple_server - About to sleep for 84ns ms.
+2023-03-15T01:22:32.852710322+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.852756079+02:00 TRACE redis_simple_server - About to sleep for 86ns ms.
+2023-03-15T01:22:32.852839145+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.852890527+02:00 TRACE redis_simple_server - About to sleep for 88ns ms.
+2023-03-15T01:22:32.853024708+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.853072113+02:00 TRACE redis_simple_server - About to sleep for 90ns ms.
+2023-03-15T01:22:32.853151417+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.853200258+02:00 TRACE redis_simple_server - About to sleep for 92ns ms.
+2023-03-15T01:22:32.853303599+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.853352437+02:00 TRACE redis_simple_server - About to sleep for 94ns ms.
+2023-03-15T01:22:32.853451179+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.853496880+02:00 TRACE redis_simple_server - About to sleep for 96ns ms.
+2023-03-15T01:22:32.853594982+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.853644316+02:00 TRACE redis_simple_server - About to sleep for 98ns ms.
+2023-03-15T01:22:32.853711481+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.853754045+02:00 TRACE redis_simple_server - About to sleep for 100ns ms.
+2023-03-15T01:22:32.853855155+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.853899059+02:00 TRACE redis_simple_server - About to sleep for 102ns ms.
+2023-03-15T01:22:32.853997436+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.854052269+02:00 TRACE redis_simple_server - About to sleep for 104ns ms.
+2023-03-15T01:22:32.854135744+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.854181113+02:00 TRACE redis_simple_server - About to sleep for 106ns ms.
+2023-03-15T01:22:32.854275864+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.854323626+02:00 TRACE redis_simple_server - About to sleep for 108ns ms.
+2023-03-15T01:22:32.854421821+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.854465652+02:00 TRACE redis_simple_server - About to sleep for 110ns ms.
+2023-03-15T01:22:32.854564750+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.854616241+02:00 TRACE redis_simple_server - About to sleep for 112ns ms.
+2023-03-15T01:22:32.854684981+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.854729947+02:00 TRACE redis_simple_server - About to sleep for 114ns ms.
+2023-03-15T01:22:32.854831211+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.854878212+02:00 TRACE redis_simple_server - About to sleep for 116ns ms.
+2023-03-15T01:22:32.855489212+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.855538338+02:00 TRACE redis_simple_server - About to sleep for 118ns ms.
+2023-03-15T01:22:32.855639223+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.855686710+02:00 TRACE redis_simple_server - About to sleep for 120ns ms.
+2023-03-15T01:22:32.855792337+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.855843582+02:00 TRACE redis_simple_server - About to sleep for 122ns ms.
+2023-03-15T01:22:32.855945196+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.855993751+02:00 TRACE redis_simple_server - About to sleep for 124ns ms.
+2023-03-15T01:22:32.856108323+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.856153347+02:00 TRACE redis_simple_server - About to sleep for 126ns ms.
+2023-03-15T01:22:32.856211605+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.856261778+02:00 TRACE redis_simple_server - About to sleep for 128ns ms.
+2023-03-15T01:22:32.856359894+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.856415355+02:00 TRACE redis_simple_server - About to sleep for 130ns ms.
+2023-03-15T01:22:32.856482708+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.856541972+02:00 TRACE redis_simple_server - About to sleep for 132ns ms.
+2023-03-15T01:22:32.856638537+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.856685042+02:00 TRACE redis_simple_server - About to sleep for 134ns ms.
+2023-03-15T01:22:32.856792616+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.856837951+02:00 TRACE redis_simple_server - About to sleep for 136ns ms.
+2023-03-15T01:22:32.856935333+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.856981111+02:00 TRACE redis_simple_server - About to sleep for 138ns ms.
+2023-03-15T01:22:32.857079520+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.857126285+02:00 TRACE redis_simple_server - About to sleep for 140ns ms.
+2023-03-15T01:22:32.857187269+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.857232246+02:00 TRACE redis_simple_server - About to sleep for 142ns ms.
+2023-03-15T01:22:32.857304576+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.857354907+02:00 TRACE redis_simple_server - About to sleep for 144ns ms.
+2023-03-15T01:22:32.857456250+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.857500210+02:00 TRACE redis_simple_server - About to sleep for 146ns ms.
+2023-03-15T01:22:32.857582130+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.857633635+02:00 TRACE redis_simple_server - About to sleep for 148ns ms.
+2023-03-15T01:22:32.857736801+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.857782615+02:00 TRACE redis_simple_server - About to sleep for 150ns ms.
+2023-03-15T01:22:32.857885647+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.857926068+02:00 TRACE redis_simple_server - About to sleep for 152ns ms.
+2023-03-15T01:22:32.858043608+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.858095413+02:00 TRACE redis_simple_server - About to sleep for 154ns ms.
+2023-03-15T01:22:32.858159858+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.858202060+02:00 TRACE redis_simple_server - About to sleep for 156ns ms.
+2023-03-15T01:22:32.858258894+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.858305642+02:00 TRACE redis_simple_server - About to sleep for 158ns ms.
+2023-03-15T01:22:32.858388860+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.858433732+02:00 TRACE redis_simple_server - About to sleep for 160ns ms.
+2023-03-15T01:22:32.858513966+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.858565657+02:00 TRACE redis_simple_server - About to sleep for 162ns ms.
+2023-03-15T01:22:32.858676173+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.858728929+02:00 TRACE redis_simple_server - About to sleep for 164ns ms.
+2023-03-15T01:22:32.858797104+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.858841239+02:00 TRACE redis_simple_server - About to sleep for 166ns ms.
+2023-03-15T01:22:32.858935731+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.858976733+02:00 TRACE redis_simple_server - About to sleep for 168ns ms.
+2023-03-15T01:22:32.859054394+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.859097093+02:00 TRACE redis_simple_server - About to sleep for 170ns ms.
+2023-03-15T01:22:32.859195214+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.859241746+02:00 TRACE redis_simple_server - About to sleep for 172ns ms.
+2023-03-15T01:22:32.859305431+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.859344414+02:00 TRACE redis_simple_server - About to sleep for 174ns ms.
+2023-03-15T01:22:32.859414972+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.859458230+02:00 TRACE redis_simple_server - About to sleep for 176ns ms.
+2023-03-15T01:22:32.859524697+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.859594460+02:00 TRACE redis_simple_server - About to sleep for 178ns ms.
+2023-03-15T01:22:32.859688354+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.859767244+02:00 TRACE redis_simple_server - About to sleep for 180ns ms.
+2023-03-15T01:22:32.859876103+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.859926349+02:00 TRACE redis_simple_server - About to sleep for 182ns ms.
+2023-03-15T01:22:32.860673258+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.860723461+02:00 TRACE redis_simple_server - About to sleep for 184ns ms.
+2023-03-15T01:22:32.860819562+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.860860814+02:00 TRACE redis_simple_server - About to sleep for 186ns ms.
+2023-03-15T01:22:32.860954746+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.860995413+02:00 TRACE redis_simple_server - About to sleep for 188ns ms.
+2023-03-15T01:22:32.861111184+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.861169385+02:00 TRACE redis_simple_server - About to sleep for 190ns ms.
+2023-03-15T01:22:32.861267777+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.861309201+02:00 TRACE redis_simple_server - About to sleep for 192ns ms.
+2023-03-15T01:22:32.861425720+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.861470892+02:00 TRACE redis_simple_server - About to sleep for 194ns ms.
+2023-03-15T01:22:32.861575037+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.861638330+02:00 TRACE redis_simple_server - About to sleep for 196ns ms.
+2023-03-15T01:22:32.861739856+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.861782936+02:00 TRACE redis_simple_server - About to sleep for 198ns ms.
+2023-03-15T01:22:32.861886172+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.861933075+02:00 TRACE redis_simple_server - About to sleep for 200ns ms.
+2023-03-15T01:22:32.862027926+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:32.862091162+02:00 INFO redis_simple_server - Read bytes: "PING"
+2023-03-15T01:22:57.373966981+02:00 TRACE redis_simple_server - Recieved client connection from stream: TcpStream { addr: 127.0.0.1:6381, peer: 127.0.0.1:50022, fd: 5 }
+2023-03-15T01:22:57.374110474+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.374162271+02:00 TRACE redis_simple_server - About to sleep for 10ns ms.
+2023-03-15T01:22:57.374243419+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.374302528+02:00 TRACE redis_simple_server - About to sleep for 2ns ms.
+2023-03-15T01:22:57.374412990+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.374454973+02:00 TRACE redis_simple_server - About to sleep for 4ns ms.
+2023-03-15T01:22:57.374552169+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.374605563+02:00 TRACE redis_simple_server - About to sleep for 6ns ms.
+2023-03-15T01:22:57.374909924+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.374956521+02:00 TRACE redis_simple_server - About to sleep for 8ns ms.
+2023-03-15T01:22:57.375030608+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.375077467+02:00 TRACE redis_simple_server - About to sleep for 10ns ms.
+2023-03-15T01:22:57.375176868+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.375219344+02:00 TRACE redis_simple_server - About to sleep for 12ns ms.
+2023-03-15T01:22:57.375325960+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.375373653+02:00 TRACE redis_simple_server - About to sleep for 14ns ms.
+2023-03-15T01:22:57.375509478+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.375554785+02:00 TRACE redis_simple_server - About to sleep for 16ns ms.
+2023-03-15T01:22:57.375655742+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.375701755+02:00 TRACE redis_simple_server - About to sleep for 18ns ms.
+2023-03-15T01:22:57.375898814+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.375939372+02:00 TRACE redis_simple_server - About to sleep for 20ns ms.
+2023-03-15T01:22:57.376026436+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.376072210+02:00 TRACE redis_simple_server - About to sleep for 22ns ms.
+2023-03-15T01:22:57.376213644+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.376257976+02:00 TRACE redis_simple_server - About to sleep for 24ns ms.
+2023-03-15T01:22:57.376356816+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.376411837+02:00 TRACE redis_simple_server - About to sleep for 26ns ms.
+2023-03-15T01:22:57.376483281+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.376530989+02:00 TRACE redis_simple_server - About to sleep for 28ns ms.
+2023-03-15T01:22:57.376597883+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.376643806+02:00 TRACE redis_simple_server - About to sleep for 30ns ms.
+2023-03-15T01:22:57.376718260+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.376758519+02:00 TRACE redis_simple_server - About to sleep for 32ns ms.
+2023-03-15T01:22:57.376890710+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.376933989+02:00 TRACE redis_simple_server - About to sleep for 34ns ms.
+2023-03-15T01:22:57.377056108+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.377104059+02:00 TRACE redis_simple_server - About to sleep for 36ns ms.
+2023-03-15T01:22:57.377183084+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.377229295+02:00 TRACE redis_simple_server - About to sleep for 38ns ms.
+2023-03-15T01:22:57.377306948+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.377354235+02:00 TRACE redis_simple_server - About to sleep for 40ns ms.
+2023-03-15T01:22:57.377456144+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.377506353+02:00 TRACE redis_simple_server - About to sleep for 42ns ms.
+2023-03-15T01:22:57.377594765+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.377638780+02:00 TRACE redis_simple_server - About to sleep for 44ns ms.
+2023-03-15T01:22:57.377756702+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.377801178+02:00 TRACE redis_simple_server - About to sleep for 46ns ms.
+2023-03-15T01:22:57.377865773+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.377909888+02:00 TRACE redis_simple_server - About to sleep for 48ns ms.
+2023-03-15T01:22:57.378002888+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.378056066+02:00 TRACE redis_simple_server - About to sleep for 50ns ms.
+2023-03-15T01:22:57.378160408+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.378205609+02:00 TRACE redis_simple_server - About to sleep for 52ns ms.
+2023-03-15T01:22:57.378288832+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.378332882+02:00 TRACE redis_simple_server - About to sleep for 54ns ms.
+2023-03-15T01:22:57.378432755+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.378491638+02:00 TRACE redis_simple_server - About to sleep for 56ns ms.
+2023-03-15T01:22:57.378560249+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.378605685+02:00 TRACE redis_simple_server - About to sleep for 58ns ms.
+2023-03-15T01:22:57.378718946+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.378762284+02:00 TRACE redis_simple_server - About to sleep for 60ns ms.
+2023-03-15T01:22:57.378836568+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.378879545+02:00 TRACE redis_simple_server - About to sleep for 62ns ms.
+2023-03-15T01:22:57.378996522+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.379053594+02:00 TRACE redis_simple_server - About to sleep for 64ns ms.
+2023-03-15T01:22:57.379125783+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.379172042+02:00 TRACE redis_simple_server - About to sleep for 66ns ms.
+2023-03-15T01:22:57.379248185+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.379293433+02:00 TRACE redis_simple_server - About to sleep for 68ns ms.
+2023-03-15T01:22:57.379404161+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.379451451+02:00 TRACE redis_simple_server - About to sleep for 70ns ms.
+2023-03-15T01:22:57.379548227+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.379591321+02:00 TRACE redis_simple_server - About to sleep for 72ns ms.
+2023-03-15T01:22:57.379683602+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.379725469+02:00 TRACE redis_simple_server - About to sleep for 74ns ms.
+2023-03-15T01:22:57.379824582+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.379865468+02:00 TRACE redis_simple_server - About to sleep for 76ns ms.
+2023-03-15T01:22:57.379935940+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.379979666+02:00 TRACE redis_simple_server - About to sleep for 78ns ms.
+2023-03-15T01:22:57.380066185+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.380110127+02:00 TRACE redis_simple_server - About to sleep for 80ns ms.
+2023-03-15T01:22:57.380182113+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.380228222+02:00 TRACE redis_simple_server - About to sleep for 82ns ms.
+2023-03-15T01:22:57.380307412+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.380354555+02:00 TRACE redis_simple_server - About to sleep for 84ns ms.
+2023-03-15T01:22:57.380472876+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.380518857+02:00 TRACE redis_simple_server - About to sleep for 86ns ms.
+2023-03-15T01:22:57.380606855+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.380655486+02:00 TRACE redis_simple_server - About to sleep for 88ns ms.
+2023-03-15T01:22:57.380772608+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.380817974+02:00 TRACE redis_simple_server - About to sleep for 90ns ms.
+2023-03-15T01:22:57.380972844+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.381028322+02:00 TRACE redis_simple_server - About to sleep for 92ns ms.
+2023-03-15T01:22:57.381136981+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.381185935+02:00 TRACE redis_simple_server - About to sleep for 94ns ms.
+2023-03-15T01:22:57.381269431+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.381324157+02:00 TRACE redis_simple_server - About to sleep for 96ns ms.
+2023-03-15T01:22:57.381424283+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.381493314+02:00 TRACE redis_simple_server - About to sleep for 98ns ms.
+2023-03-15T01:22:57.381622652+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.381698229+02:00 TRACE redis_simple_server - About to sleep for 100ns ms.
+2023-03-15T01:22:57.381828464+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.381889440+02:00 TRACE redis_simple_server - About to sleep for 102ns ms.
+2023-03-15T01:22:57.382031482+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.382099196+02:00 TRACE redis_simple_server - About to sleep for 104ns ms.
+2023-03-15T01:22:57.382716599+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.382768525+02:00 TRACE redis_simple_server - About to sleep for 106ns ms.
+2023-03-15T01:22:57.382880738+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.382929506+02:00 TRACE redis_simple_server - About to sleep for 108ns ms.
+2023-03-15T01:22:57.383042415+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.383091103+02:00 TRACE redis_simple_server - About to sleep for 110ns ms.
+2023-03-15T01:22:57.383197447+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.383242437+02:00 TRACE redis_simple_server - About to sleep for 112ns ms.
+2023-03-15T01:22:57.383357247+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.383406499+02:00 TRACE redis_simple_server - About to sleep for 114ns ms.
+2023-03-15T01:22:57.383507730+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.383551346+02:00 TRACE redis_simple_server - About to sleep for 116ns ms.
+2023-03-15T01:22:57.383653962+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.383701770+02:00 TRACE redis_simple_server - About to sleep for 118ns ms.
+2023-03-15T01:22:57.383836721+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.383938099+02:00 TRACE redis_simple_server - About to sleep for 120ns ms.
+2023-03-15T01:22:57.384056165+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.384127969+02:00 TRACE redis_simple_server - About to sleep for 122ns ms.
+2023-03-15T01:22:57.384249121+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.384304607+02:00 TRACE redis_simple_server - About to sleep for 124ns ms.
+2023-03-15T01:22:57.384412459+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.384455837+02:00 TRACE redis_simple_server - About to sleep for 126ns ms.
+2023-03-15T01:22:57.384577835+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.384633212+02:00 TRACE redis_simple_server - About to sleep for 128ns ms.
+2023-03-15T01:22:57.384804634+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.384917150+02:00 TRACE redis_simple_server - About to sleep for 130ns ms.
+2023-03-15T01:22:57.385028142+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.385071009+02:00 TRACE redis_simple_server - About to sleep for 132ns ms.
+2023-03-15T01:22:57.385163595+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.385214918+02:00 TRACE redis_simple_server - About to sleep for 134ns ms.
+2023-03-15T01:22:57.385333480+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.385393900+02:00 TRACE redis_simple_server - About to sleep for 136ns ms.
+2023-03-15T01:22:57.385542615+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.385594463+02:00 TRACE redis_simple_server - About to sleep for 138ns ms.
+2023-03-15T01:22:57.385700230+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.385748694+02:00 TRACE redis_simple_server - About to sleep for 140ns ms.
+2023-03-15T01:22:57.385846236+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.385894997+02:00 TRACE redis_simple_server - About to sleep for 142ns ms.
+2023-03-15T01:22:57.385983105+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.386043254+02:00 TRACE redis_simple_server - About to sleep for 144ns ms.
+2023-03-15T01:22:57.386140799+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.386188809+02:00 TRACE redis_simple_server - About to sleep for 146ns ms.
+2023-03-15T01:22:57.386288759+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.386330815+02:00 TRACE redis_simple_server - About to sleep for 148ns ms.
+2023-03-15T01:22:57.386422391+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.386462590+02:00 TRACE redis_simple_server - About to sleep for 150ns ms.
+2023-03-15T01:22:57.386534954+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.386576016+02:00 TRACE redis_simple_server - About to sleep for 152ns ms.
+2023-03-15T01:22:57.386668208+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.386710149+02:00 TRACE redis_simple_server - About to sleep for 154ns ms.
+2023-03-15T01:22:57.386817009+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.386862033+02:00 TRACE redis_simple_server - About to sleep for 156ns ms.
+2023-03-15T01:22:57.386965086+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.387026106+02:00 TRACE redis_simple_server - About to sleep for 158ns ms.
+2023-03-15T01:22:57.387092902+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.387142113+02:00 TRACE redis_simple_server - About to sleep for 160ns ms.
+2023-03-15T01:22:57.387329562+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.387370041+02:00 TRACE redis_simple_server - About to sleep for 162ns ms.
+2023-03-15T01:22:57.387466638+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.387512068+02:00 TRACE redis_simple_server - About to sleep for 164ns ms.
+2023-03-15T01:22:57.387607926+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.387649370+02:00 TRACE redis_simple_server - About to sleep for 166ns ms.
+2023-03-15T01:22:57.387743871+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.387788334+02:00 TRACE redis_simple_server - About to sleep for 168ns ms.
+2023-03-15T01:22:57.387883388+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.387927291+02:00 TRACE redis_simple_server - About to sleep for 170ns ms.
+2023-03-15T01:22:57.388029515+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.388074530+02:00 TRACE redis_simple_server - About to sleep for 172ns ms.
+2023-03-15T01:22:57.388173095+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.388216576+02:00 TRACE redis_simple_server - About to sleep for 174ns ms.
+2023-03-15T01:22:57.388325774+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.388375168+02:00 TRACE redis_simple_server - About to sleep for 176ns ms.
+2023-03-15T01:22:57.388475072+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.388516259+02:00 TRACE redis_simple_server - About to sleep for 178ns ms.
+2023-03-15T01:22:57.388610729+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.388651491+02:00 TRACE redis_simple_server - About to sleep for 180ns ms.
+2023-03-15T01:22:57.388746731+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.388788592+02:00 TRACE redis_simple_server - About to sleep for 182ns ms.
+2023-03-15T01:22:57.388882808+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.388924533+02:00 TRACE redis_simple_server - About to sleep for 184ns ms.
+2023-03-15T01:22:57.389027818+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.389068991+02:00 TRACE redis_simple_server - About to sleep for 186ns ms.
+2023-03-15T01:22:57.389169908+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.389252692+02:00 TRACE redis_simple_server - About to sleep for 188ns ms.
+2023-03-15T01:22:57.389362746+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.389407178+02:00 TRACE redis_simple_server - About to sleep for 190ns ms.
+2023-03-15T01:22:57.389507521+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.389563317+02:00 TRACE redis_simple_server - About to sleep for 192ns ms.
+2023-03-15T01:22:57.389660401+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.389704502+02:00 TRACE redis_simple_server - About to sleep for 194ns ms.
+2023-03-15T01:22:57.389800530+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.389846566+02:00 TRACE redis_simple_server - About to sleep for 196ns ms.
+2023-03-15T01:22:57.389944833+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.390001373+02:00 TRACE redis_simple_server - About to sleep for 198ns ms.
+2023-03-15T01:22:57.390108742+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.390156106+02:00 TRACE redis_simple_server - About to sleep for 200ns ms.
+2023-03-15T01:22:57.390260549+02:00 TRACE redis_simple_server - Error reading Os { code: 11, kind: WouldBlock, message: "Resource temporarily unavailable" }
+2023-03-15T01:22:57.390308489+02:00 INFO redis_simple_server - Read bytes: "PING"

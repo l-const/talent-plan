@@ -12,3 +12,12 @@ docker compose  -up d
 ... 
 ```
 
+### Run redis simple client(default port= 6379)
+```
+REDIS_PORT=6380 cargo run --bin redis-simple-client
+```
+
+### Run redis simple server(default port= 6379)
+```
+REDIS_PORT=6380 cargo run --bin redis-simple-server
+```
