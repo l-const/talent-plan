@@ -1,0 +1,2 @@
+[workspace]
+members = ["redis", "serde_redis", "redis_protocol"]
