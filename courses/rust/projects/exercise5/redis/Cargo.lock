@@ -468,6 +468,7 @@ dependencies = [
 name = "serde_redis"
 version = "0.1.0"
 dependencies = [
+ "redis_protocol",
  "serde",
  "serde_derive",
 ]
