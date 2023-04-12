@@ -19,6 +19,11 @@ fn main() -> Result<()> {
         .setting(AppSettings::DisableHelpSubcommand)
         .setting(AppSettings::SubcommandRequiredElseHelp)
         .setting(AppSettings::VersionlessSubcommands)
+        .arg(Arg::with_name("addr")
+        .long("addr")
+        .help("IP-PORT")
+        .default_value("127.0.0.1:4000")
+        .required(true))
         .subcommands(vec![
             SubCommand::with_name("set")
                 .about("Set the value of a string key to a string")
